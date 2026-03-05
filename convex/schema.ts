@@ -15,6 +15,11 @@ export default defineSchema({
     role: v.optional(v.union(v.literal("coach"), v.literal("athlete"))),
   }).index("email", ["email"]),
 
+  exercises: defineTable({
+    type: v.string(), // base exercise, e.g. "Pull up"
+    variation: v.string(), // specific form, e.g. "hold", "assisted"
+  }).index("by_type", ["type"]),
+
   programs: defineTable({
     name: v.string(),
     duration: v.number(), // in weeks

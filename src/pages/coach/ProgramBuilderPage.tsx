@@ -2,7 +2,6 @@ import { useReducer, useState } from "react";
 import { useMutation } from "convex/react";
 import { useNavigate } from "react-router";
 import { api } from "../../../convex/_generated/api";
-import { EXERCISES } from "../../../convex/exercises";
 import { Button } from "@/components/ui/button";
 import { ProgramForm } from "@/components/program-builder/ProgramForm";
 import { SetCard } from "@/components/program-builder/SetCard";
@@ -176,17 +175,7 @@ function reducer(state: ProgramFormState, action: Action): ProgramFormState {
                 ...sl,
                 scales: sl.scales.map((sc) => {
                   if (sc.id !== action.scaleId) return sc;
-                  const updated = { ...sc, [action.field]: action.value };
-                  // Auto-set type from exercise list when exercise changes
-                  if (action.field === "exerciseName") {
-                    const exercise = EXERCISES.find(
-                      (e) => e.name === action.value,
-                    );
-                    if (exercise) {
-                      updated.type = exercise.type;
-                    }
-                  }
-                  return updated;
+                  return { ...sc, [action.field]: action.value };
                 }),
               };
             }),

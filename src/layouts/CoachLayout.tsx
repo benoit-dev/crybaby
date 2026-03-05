@@ -9,12 +9,22 @@ export default function CoachLayout() {
     <div className="min-h-screen bg-background">
       <header className="border-b">
         <div className="container mx-auto flex items-center justify-between px-4 py-3">
-          <Link
-            to="/coach/programs"
-            className="font-heading text-2xl uppercase tracking-wide"
-          >
-            crybabygym
-          </Link>
+          <div className="flex items-center gap-6">
+            <Link
+              to="/coach/programs"
+              className="font-heading text-2xl uppercase tracking-wide"
+            >
+              crybabygym
+            </Link>
+            <nav className="flex gap-4">
+              <Link to="/coach/programs" className="text-sm hover:underline">
+                Programs
+              </Link>
+              <Link to="/coach/exercises" className="text-sm hover:underline">
+                Exercises
+              </Link>
+            </nav>
+          </div>
           <Button
             variant="outline"
             size="sm"

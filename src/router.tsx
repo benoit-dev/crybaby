@@ -6,6 +6,7 @@ import AthleteLayout from "@/layouts/AthleteLayout";
 import SignInPage from "@/pages/SignInPage";
 import ProgramListPage from "@/pages/coach/ProgramListPage";
 import ProgramBuilderPage from "@/pages/coach/ProgramBuilderPage";
+import ExerciseListPage from "@/pages/coach/ExerciseListPage";
 import AthleteProgramListPage from "@/pages/athlete/AthleteProgramListPage";
 import AthleteProgramPage from "@/pages/athlete/AthleteProgramPage";
 import SessionHistoryPage from "@/pages/athlete/SessionHistoryPage";
@@ -37,6 +38,7 @@ export const router = createBrowserRouter([
         children: [
           { path: "programs", element: <ProgramListPage /> },
           { path: "programs/new", element: <ProgramBuilderPage /> },
+          { path: "exercises", element: <ExerciseListPage /> },
         ],
       },
     ],
